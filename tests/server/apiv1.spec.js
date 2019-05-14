@@ -44,7 +44,7 @@
     it('with valid zip code and error from request call', function() {
       reqMock = {
         query: {
-          zip: 79968
+          zip: 'Hamilton'
         }
       };
 
@@ -63,7 +63,7 @@
     it('with incomplete zip code', function() {
       reqMock = {
         query: {
-          zip: 79968
+          zip: 'Ham'
         }
       };
 
@@ -82,20 +82,20 @@
     it('with valid zip code', function() {
       reqMock = {
         query: {
-          zip: 79968
+          zip: 'Auckland'
         }
       };
 
       var body = {
         cod: 200,
-        name: 'El Paso',
+        name: 'Auckland',
         weather: [
           {
             main: 'cold'
           }
         ],
         main: {
-          temp: 78
+          temp: 15
         }
       };
 
@@ -108,8 +108,8 @@
       apiv1.getWeather(reqMock, resMock);
 
       assert(resMock.status.lastCall.calledWith(200), 'Unexpected response:' + resMock.status.lastCall.args);
-      assert(resMock.send.lastCall.args[0].city === 'El Paso', 'Unexpected response:' + resMock.send.lastCall.args[0].city);
-      assert(resMock.send.lastCall.args[0].weather === 'Conditions are cold and temperature is 78 F', 'Unexpected response:' + resMock.send.lastCall.args[0].weather);
+      assert(resMock.send.lastCall.args[0].city === 'Auckland', 'Unexpected response:' + resMock.send.lastCall.args[0].city);
+      assert(resMock.send.lastCall.args[0].weather === 'Conditions are cold and temperature is 15 C', 'Unexpected response:' + resMock.send.lastCall.args[0].weather);
     });
   });
 
@@ -131,7 +131,7 @@
     it('with valid zip code and error from request call', function() {
       reqMock = {
         query: {
-          zip: 79968
+          zip: 'Hamilton'
         }
       };
 
@@ -150,7 +150,7 @@
     it('with incomplete zip code', function() {
       reqMock = {
         query: {
-          zip: 79968
+          zip: 'Hami'
         }
       };
 
@@ -169,20 +169,20 @@
     it('with valid zip code', function() {
       reqMock = {
         query: {
-          zip: 79968
+          zip: 'Wellington'
         }
       };
 
       var body = {
         cod: 200,
-        name: 'El Paso',
+        name: 'Wellington',
         weather: [
           {
             main: 'cold'
           }
         ],
         main: {
-          temp: 78
+          temp: 17
         }
       };
 
@@ -195,8 +195,8 @@
       apiv1.getWeather2(reqMock, resMock);
 
       assert(resMock.status.lastCall.calledWith(200), 'Unexpected response:' + resMock.status.lastCall.args);
-      assert(resMock.send.lastCall.args[0].city === 'El Paso', 'Unexpected response:' + resMock.send.lastCall.args[0].city);
-      assert(resMock.send.lastCall.args[0].weather === 'Conditions are cold and temperature is 78 F', 'Unexpected response:' + resMock.send.lastCall.args[0].weather);
+      assert(resMock.send.lastCall.args[0].city === 'Wellington', 'Unexpected response:' + resMock.send.lastCall.args[0].city);
+      assert(resMock.send.lastCall.args[0].weather === 'Conditions are cold and temperature is 17 C', 'Unexpected response:' + resMock.send.lastCall.args[0].weather);
     });
   });
 }());
