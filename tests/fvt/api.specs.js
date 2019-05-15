@@ -22,7 +22,7 @@
         }
         request({
       		method: 'GET',
-              url: appUrl + '/api/v1/getWeather?q=Auckland,nz'//zip=78613
+              url: appUrl + '/api/v1/getWeather?q=Auckland,nz&appid=fbeb047c736975b6156778d7679c6045'//zip=78613
           }, function(err, resp, body) {
           	if(err) {
           		assert.fail('Failed to get the response');
@@ -42,7 +42,7 @@
         }
         request({
       		method: 'GET',
-              url: appUrl + '/api/v1/getWeather'
+              url: appUrl + '/api/v1/getWeather&appid=fbeb047c736975b6156778d7679c6045'
           }, /* @callback */ function(err, resp, body) {
           	if(err) {
           		assert.fail('Failed to get the response');
@@ -60,7 +60,7 @@
         }
         request({
       		method: 'GET',
-              url: appUrl + '/api/v1/getWeather?q=Hamilton,nz'//zip=78641
+              url: appUrl + '/api/v1/getWeather?q=Hamilton,nz&appid=fbeb047c736975b6156778d7679c6045'//zip=78641
           }, function(err, resp, body) {
           	if(err) {
           		assert.fail('Failed to get the response');
