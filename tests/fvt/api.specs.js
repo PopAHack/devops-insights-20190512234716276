@@ -22,7 +22,7 @@
         }
         request({
       		method: 'GET',
-              url: appUrl + '/data/2.5/weather?q=Auckland,nz&appid=fbeb047c736975b6156778d7679c6045'//zip=78613
+              url: appUrl + '?q=Auckland,nz&appid=fbeb047c736975b6156778d7679c6045'//zip=78613
           }, function(err, resp, body) {
           	if(err) {
           		assert.fail('Failed to get the response');
@@ -60,7 +60,7 @@
         }
         request({
       		method: 'GET',
-              url: appUrl + '/data/2.5/weather?q=Hamilton,nz&appid=fbeb047c736975b6156778d7679c6045'//zip=78641
+              url: appUrl + '?q=Hamilton,nz&appid=fbeb047c736975b6156778d7679c6045'//zip=78641
           }, function(err, resp, body) {
           	if(err) {
           		assert.fail('Failed to get the response');
