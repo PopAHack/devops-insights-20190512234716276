@@ -12,6 +12,7 @@
     });
 
     var appUrl = process.env.APP_URL;
+    var OPENWEATHERURL = "http://api.openweathermap.org/data/2.5/weather?appid=fbeb047c736975b6156778d7679c6045&units=metric";
 
     describe('Get Weather', function() {
 
@@ -22,7 +23,7 @@
         }
         request({
       		method: 'GET',
-              url: appUrl + '?q=Auckland,nz&appid=fbeb047c736975b6156778d7679c6045'//zip=78613
+              url: OPENWEATHERURL + '?q=Auckland,nz'//zip=78613
           }, function(err, resp, body) {
           	if(err) {
           		assert.fail('Failed to get the response');
@@ -42,7 +43,7 @@
         }
         request({
       		method: 'GET',
-              url: appUrl + '/api/v1/getWeather'
+              url: OPENWEATHERURL //appUrl + '/api/v1/getWeather'
           }, /* @callback */ function(err, resp, body) {
           	if(err) {
           		assert.fail('Failed to get the response');
@@ -60,7 +61,7 @@
         }
         request({
       		method: 'GET',
-              url: appUrl + '?q=Hamilton,nz&appid=fbeb047c736975b6156778d7679c6045'//zip=78641
+              url: OPENWEATHERURL + '?q=Hamilton,nz'//zip=78641
           }, function(err, resp, body) {
           	if(err) {
           		assert.fail('Failed to get the response');
