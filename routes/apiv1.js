@@ -63,8 +63,9 @@ exports.getWeather2 = function(req, res) {
 
     			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe-ySdrxf6yeAuhQkeVRI6xBb4kwcdpLM&callback=initMap"
 
-    			var pos = {lat: body.coord.lat, lng: body.coord.lng};
+    			var pos = {var lat: body.coord.lat, var lng: body.coord.lng};
                 var marker = new google.maps.Marker({position: pos, map: map});
+
 
 
 
