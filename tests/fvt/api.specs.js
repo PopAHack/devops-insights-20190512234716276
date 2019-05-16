@@ -30,7 +30,7 @@
           	} else {
               assert.equal(resp.statusCode, 200);
               var pbody = JSON.parse(body);
-              assert(pbody.city === 'Auckland', "City name does not match");//|| (pbody.city === 'Round Rock'
+              assert(pbody.name === 'Auckland', "City name does not match");//|| (pbody.city === 'Round Rock'
               done();
             }
         });
@@ -43,7 +43,7 @@
         }
         request({
       		method: 'GET',
-              url: OPENWEATHERURL + '&appid=fbeb047c736975b6156778d7679c6045&units=metric' //appUrl + '/api/v1/getWeather'
+              url: OPENWEATHERURL + '?appid=fbeb047c736975b6156778d7679c6045&units=metric' //appUrl + '/api/v1/getWeather'
           }, /* @callback */ function(err, resp, body) {
           	if(err) {
           		assert.fail('Failed to get the response');
@@ -68,7 +68,7 @@
           	} else {
               assert.equal(resp.statusCode, 200);
               var pbody = JSON.parse(body);
-              assert(pbody.city === 'Hamilton', "City name does not match");
+              assert(pbody.name === 'Hamilton', "City name does not match");
               done();
             }
         });
