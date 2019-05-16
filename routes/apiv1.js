@@ -31,11 +31,14 @@ exports.getWeather = function(req, res) {
     			var response = {city: body.name, weather: weath};
 
     			//now here add a pin to the map
-    			var lon = body.lon;
-    			var lat = body.lat;
-    			var pos ={lat: lat, lng: lon};
+    			if(body.coord.lon != 'undefined')
+    			{
+    			    var lon = body.coord.lon;
+    			    var lat = body.coord.lat;
+    			    var pos ={lat: lat, lng: lon};
 
-    			var marker = new google.maps.Marker({position: pos, map: map});
+    			    var marker = new google.maps.Marker({position: pos, map: map});
+    			}
 
     			return res.status(200).send(response);
     		} else {
