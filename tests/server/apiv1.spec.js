@@ -91,8 +91,8 @@
         name: 'Auckland',
         coord:
             {
+              lon: 174.76667,
               lat: -36.86667
-              lon: 174.76667
             },
         weather: [
           {
@@ -183,8 +183,9 @@
         name: 'Wellington',
         coord:
           {
-            lat: -41.28664,
-            lon: 174.77557
+            lon: 174.77557,
+            lat: -41.28664
+
           },
         weather: [
           {
