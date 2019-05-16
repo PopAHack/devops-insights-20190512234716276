@@ -54,8 +54,18 @@
          });
 */
         </script>
+
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe-ySdrxf6yeAuhQkeVRI6xBb4kwcdpLM&callback=initMap"
         async defer></script>
+
+        </script>
+        function addMarker(pos)
+        {
+            var marker1 = new google.maps.Marker({position: pos, map: map});
+        }
+        router.get('/addMarker', exports.addMarker);
+        exports.router = router;
+        </script>
     
         <div float="left">
             <% include includes/mainbody %>

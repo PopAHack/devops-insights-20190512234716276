@@ -36,8 +36,8 @@ exports.getWeather = function(req, res) {
                 var long = body.coord.lon;
 
                 var pos = {lat: late, lng: long};
-                var marker = new google.maps.Marker({position: pos, map: map});
-
+                //var marker = new google.maps.Marker({position: pos, map: map});
+                router.addMarker(pos);
 
 
     			return res.status(200).send(response);
@@ -75,8 +75,8 @@ exports.getWeather2 = function(req, res) {
                 var lng = body.coord.lon;
 
     			var pos = {lat, lng};
-                var marker = new google.maps.Marker({position: pos, map: map});
-
+                //var marker = new google.maps.Marker({position: pos, map: map});
+                router.addMarker(pos);
 
     			return res.status(200).send(response);
     		} else {
@@ -87,5 +87,5 @@ exports.getWeather2 = function(req, res) {
 
 };
 router.get('/getWeather2', exports.getWeather2);
-
 exports.router = router;
+
