@@ -61,8 +61,6 @@ exports.getWeather2 = function(req, res) {
     			var weath = "Conditions are " + body.weather[0].main + " and temperature is " + body.main.temp + ' C';//changes
     			var response = {city: body.name, weather: weath};
 
-    			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe-ySdrxf6yeAuhQkeVRI6xBb4kwcdpLM&callback=initMap"
-
     			var pos = {var lat: body.coord.lat, var lng: body.coord.lng};
                 var marker = new google.maps.Marker({position: pos, map: map});
 
