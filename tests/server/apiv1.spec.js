@@ -89,6 +89,12 @@
       var body = {
         cod: 200,
         name: 'Auckland',
+        coord: [
+            {
+              lat: -36.86667
+              lng: 174.76667
+            }
+        ],
         weather: [
           {
             main: 'cold'
@@ -176,6 +182,12 @@
       var body = {
         cod: 200,
         name: 'Wellington',
+        coord: [
+          {
+            lat: -41.28664
+            lng: 174.77557
+          }
+        ],
         weather: [
           {
             main: 'cold'
