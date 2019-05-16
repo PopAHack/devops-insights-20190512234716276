@@ -183,7 +183,7 @@
         name: 'Wellington',
         coord:
           {
-            lat: -41.28664
+            lat: -41.28664,
             lon: 174.77557
           },
         weather: [
