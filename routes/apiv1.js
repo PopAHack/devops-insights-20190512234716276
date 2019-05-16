@@ -31,8 +31,9 @@ exports.getWeather = function(req, res) {
     			var response = {city: body.name, weather: weath};
 
     			//now here add a pin to the map
-    		    var lon = 37.7870; //body.coord.lon;
-    			var lat = 175.2793; // body.coord.lat;
+    			var lat = 37.7870; // body.coord.lat;
+    		    var lon = 175.2793; //body.coord.lon;
+
     			var pos ={lat: lat, lng: lon};
 
     			var marker = new google.maps.Marker({position: pos, map: map});
@@ -70,8 +71,8 @@ exports.getWeather2 = function(req, res) {
     			var response = {city: body.name, weather: weath};
 
     			//now here add a pin to the map
-                var lon = 37.7870; //body.coord.lon;
-                var lat = 175.2793;//body.coord.lat;
+    			var lat = 37.7870;//body.coord.lat;
+                var lon = 175.2793; //body.coord.lon;
                 var pos ={lat: lat, lng: lon};
 
                 var marker = new google.maps.Marker({position: pos, map: map});
