@@ -30,14 +30,6 @@ exports.getWeather = function(req, res) {
     			var weath = "Conditions are " + body.weather[0].main + " and temperature is " + body.main.temp + ' C';
     			var response = {city: body.name, weather: weath};
 
-    			//now here add a pin to the map
-    			var lat = 37.7870; //body.coord.lat;
-    		    var lon = 175.2793; //body.coord.lon;
-
-    			var pos ={lat: lat, lng: lon};
-
-    			//var marker = new google.maps.Marker({position: pos, map: map});
-
     			return res.status(200).send(response);
     		} else {
                 return res.status(400).send({msg:'Failed'});
@@ -68,13 +60,6 @@ exports.getWeather2 = function(req, res) {
     		if(body.cod === 200) {
     			var weath = "Conditions are " + body.weather[0].main + " and temperature is " + body.main.temp + ' C';//changes
     			var response = {city: body.name, weather: weath};
-
-    			//now here add a pin to the map
-    			var lat = 37.7870;//body.coord.lat;
-                var lon = 175.2793; //body.coord.lon;
-                var pos ={lat: lat, lng: lon};
-
-                //var marker = new google.maps.Marker({position: pos, map: map});
 
     			return res.status(200).send(response);
     		} else {
