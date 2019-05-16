@@ -30,13 +30,13 @@ exports.getWeather = function(req, res) {
     			var weath = "Conditions are " + body.weather[0].main + " and temperature is " + body.main.temp + ' C';
     			var response = {city: body.name, weather: weath};
 
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe-ySdrxf6yeAuhQkeVRI6xBb4kwcdpLM&callback=initMap"
+                //src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe-ySdrxf6yeAuhQkeVRI6xBb4kwcdpLM&callback=initMap"
 
     			var late = body.coord.lat;
                 var long = body.coord.lon;
 
                 var pos = {lat: late, lng: long};
-                //var marker = new google.maps.Marker({position: pos, map: map});
+                var marker = new google.maps.Marker({position: pos, map: map});
 
 
 
@@ -71,13 +71,12 @@ exports.getWeather2 = function(req, res) {
     			var weath = "Conditions are " + body.weather[0].main + " and temperature is " + body.main.temp + ' C';//changes
     			var response = {city: body.name, weather: weath};
 
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe-ySdrxf6yeAuhQkeVRI6xBb4kwcdpLM&callback=initMap"
-
                 var lat = body.coord.lat;
                 var lng = body.coord.lon;
 
     			var pos = {lat, lng};
-                //var marker = new google.maps.Marker({position: pos, map: map});
+                var marker = new google.maps.Marker({position: pos, map: map});
+
 
     			return res.status(200).send(response);
     		} else {
