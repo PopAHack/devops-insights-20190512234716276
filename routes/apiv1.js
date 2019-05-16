@@ -30,10 +30,10 @@ exports.getWeather = function(req, res) {
     			var weath = "Conditions are " + body.weather[0].main + " and temperature is " + body.main.temp + ' C';
     			var response = {city: body.name, weather: weath};
 
-    			var lat: body.coord.lat;
-                var lng: body.coord.lon;
+    			var late: body.coord.lat;
+                var long: body.coord.lon;
 
-                var pos = {lat, lng};
+                var pos = {lat: late, lng: long};
                 var marker = new google.maps.Marker({position: pos, map: map});
 
 
