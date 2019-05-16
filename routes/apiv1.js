@@ -31,7 +31,7 @@ exports.getWeather = function(req, res) {
     			var response = {city: body.name, weather: weath};
 
     			var lat: body.coord.lat;
-                var lng: body.coord.lng;
+                var lng: body.coord.lon;
 
                 var pos = {lat, lng};
                 var marker = new google.maps.Marker({position: pos, map: map});
