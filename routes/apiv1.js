@@ -29,9 +29,10 @@ exports.getWeather = function(req, res) {
     		if(body.cod === 200) {
     			var weath = "Conditions are " + body.weather[0].main + " and temperature is " + body.main.temp + ' C';
     			var response = {city: body.name, weather: weath};
+
     			//now here add a pin to the map
-    			var lon = body.coord.lon;
-    			var lat = body.coord.lat;
+    			var lon = body.lon;
+    			var lat = body.lat;
     			var pos ={lat: lat, lng: lon};
 
     			var marker = new google.maps.Marker({position: pos, map: map});
