@@ -30,24 +30,31 @@
         <div id="map"></div>
         <script>
         var map;
+
+        //create positions
+        var Hamilton = {lat: -37.78333 175.28333, lng: 175.2793}
+        var Auckland = {lat: -36.86667, lng: 174.76667};
+        var Christchurch = {lat:-43.53333, lng: 172.63333};
+        var Taupo = {lat: -38.68333, lng: 176.08333};
+        var Wellington = {lat: -41.28664, lng: 174.77557};
+
         function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 37.7870, lng: 175.2793},
+          map = new google.maps.Map(document.getElementById('map'), {
+          center: {Hamilton},
           zoom: 8
             });
-
-            var Hamilton = {lat: -37.78333 175.28333, lng: 175.2793};
-            var Auckland = {lat: -36.86667, lng: 174.76667};
-            var Christchurch = {lat:-43.53333, lng: 172.63333};
-            var Taupo = {lat: -38.68333, lng: 176.08333};
-            var Wellington = {lat: -41.28664, lng: 174.77557};
-
-            var marker1 = new google.maps.Marker({position: Hamilton, map: map});
-            var marker2 = new google.maps.Marker({position: Auckland, map: map});
-            var marker3 = new google.maps.Marker({position: Christchurch, map: map});
-            var marker4 = new google.maps.Marker({position: Taupo, map: map});
-            var marker5 = new google.maps.Marker({position: Wellington, map: map});
         }
+
+        //create markers
+        var marker1 = new google.maps.Marker({position: Hamilton, map: map});
+        var marker2 = new google.maps.Marker({position: Auckland, map: map});
+        var marker3 = new google.maps.Marker({position: Christchurch, map: map});
+        var marker4 = new google.maps.Marker({position: Taupo, map: map});
+        var marker5 = new google.maps.Marker({position: Wellington, map: map});
+
+        marker1.addListener('click', function()){
+
+         });
         </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe-ySdrxf6yeAuhQkeVRI6xBb4kwcdpLM&callback=initMap"
         async defer></script>
