@@ -31,14 +31,12 @@ exports.getWeather = function(req, res) {
     			var response = {city: body.name, weather: weath};
 
     			//now here add a pin to the map
-    			if(typeof(body.coord.lon) != 'undefined')
-    			{
-    			    var lon = body.coord.lon;
-    			    var lat = body.coord.lat;
-    			    var pos ={lat: lat, lng: lon};
+    		    var lon = body.coord.lon;
+    			var lat = body.coord.lat;
+    			var pos ={lat: lat, lng: lon};
 
-    			    var marker = new google.maps.Marker({position: pos, map: map});
-    			}
+    			var marker = new google.maps.Marker({position: pos, map: map});
+
 
     			return res.status(200).send(response);
     		} else {
@@ -72,14 +70,11 @@ exports.getWeather2 = function(req, res) {
     			var response = {city: body.name, weather: weath};
 
     			//now here add a pin to the map
-                  if(typeof(body.coord.lon) != 'undefined')
-                  {
-                      var lon = body.coord.lon;
-                      var lat = body.coord.lat;
-                      var pos ={lat: lat, lng: lon};
+                var lon = 37.7870; //body.coord.lon;
+                var lat = 175.2793;//body.coord.lat;
+                var pos ={lat: lat, lng: lon};
 
-                      var marker = new google.maps.Marker({position: pos, map: map});
-                  }
+                var marker = new google.maps.Marker({position: pos, map: map});
 
     			return res.status(200).send(response);
     		} else {
