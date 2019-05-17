@@ -66,7 +66,7 @@ exports.getWeather = function(req, res) {
                             //add the new city to the database!
                             //sql query...
                             var queryMakeTable = 'CREATE TABLE cities (Name varchar(255));';
-                            var queryAddCity = 'INSERT INTO cities VALUES(' + body2.name + ');';
+                            var queryAddCity = 'INSERT INTO cities VALUES(' + body.name + ');';
 
 
                         } else {
