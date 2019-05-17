@@ -34,8 +34,32 @@ exports.getWeather = function(req, res) {
                 var long = body.coord.lon;
 
                 var pos = {lat: late, lng: long};
+
                 //now add the marker (not working)
                 //var marker = new google.maps.Marker({position: pos, map: map});
+
+
+                //sql stuff:
+                var api = '/dbapi/v3'
+                var host = 'https://dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net' + api;
+
+                var userinfo =
+                {
+                    var userid = 'nnv54406',
+                    var password = '63fb7mxj43-5x40g'
+                };
+
+                var service = '/auth/tokens';
+                var r = request.post("dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net" + service, json = userinfo);
+                var token;
+                if(r.status_code = 200)
+                    {
+                        token = r.json()['token'];
+                        print(token);
+                    }
+
+
+
 
     			return res.status(200).send(response);
     		} else {
