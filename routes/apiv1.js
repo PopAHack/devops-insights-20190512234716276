@@ -62,7 +62,7 @@ exports.getWeather = function(req, res) {
                     }else {
                         if(body.cod == 200){
                             var token = body2.token;
-                            console.print(token);
+                            console.log(token);
 
                             //add the new city to the database!
                             //sql query...
