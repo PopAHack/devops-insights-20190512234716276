@@ -60,7 +60,7 @@ exports.getWeather = function(req, res) {
                     if(err2) {
                         res.status(400).send('Failed to get the data');
                     }else {
-                        if(resp2.cod == 200){
+                        if(resp2.statusCode == 200){
                             var token = body2.token;
                             print(token);
 
