@@ -50,17 +50,15 @@ exports.getWeather = function(req, res) {
                 };
 
                 var service = '/auth/tokens';
-                var r = request({host + service, json = userinfo}), function( err, resp, body)
+                var request({host + service, json = userinfo}), function( err2, resp2, body2)
                 {
-                    if(err) {
-                            res.status(400).send('Failed to get the data');
-                        }else
-                        	{
-                        	    var token;
-                                token = r.json()['token'];
-                                print(token);
+                    if(err2) {
+                        res.status(400).send('Failed to get the data');
+                    }else {
+                        var token = body.token;
+                        print(token);
 
-                        	}
+                     }
                 }
 
 
