@@ -50,18 +50,25 @@ exports.getWeather = function(req, res) {
                 };
 
                 var service = '/auth/tokens';
-                var request({host + service, json = userinfo}), function( err2, resp2, body2)
+                var request({host + service, json = userinfo}, function( err2, resp2, body2)
                 {
                     if(err2) {
                         res.status(400).send('Failed to get the data');
                     }else {
-                        var token = body2.token;
-                        print(token);
+                        if(resp2.cod == 200){
+                            var token = body2.token;
+                            print(token);
+
+
+
+
+
+                        } else {
+                            res.status(400).send('Failed to receive data');
+                         }
 
                      }
-                }
-
-
+                });
     			return res.status(200).send(response);
     		} else {
                 return res.status(400).send({msg:'Failed'});
