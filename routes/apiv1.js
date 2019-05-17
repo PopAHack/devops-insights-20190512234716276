@@ -1,4 +1,3 @@
-
 var express = require('express');
 var router = express.Router();
 var REQUEST = require('request');
@@ -66,6 +65,9 @@ exports.getWeather = function(req, res) {
 
                             //add the new city to the database!
                             //sql query...
+                            var queryMakeTable = 'CREATE TABLE cities (Name varchar(255));';
+                            var queryAddCity = 'INSERT INTO cities VALUES(' + bodies.name + ');';
+
 
                         } else {
                             res.status(400).send('Failed to receive data');
