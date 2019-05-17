@@ -68,7 +68,7 @@ exports.getWeather = function(req, res) {
                             var queryMakeTable = 'CREATE TABLE cities (Name varchar(255));';
                             var queryAddCity = 'INSERT INTO cities VALUES(' + body.name + ');';
                             var authHeader = {Autherization: 'Bearer ' + token};
-                            var job#;
+                            var jobnum;
                             service = '/sql/jobs'
                             var sqlCmd = {
                                 commands: queryAddCity,
@@ -86,7 +86,7 @@ exports.getWeather = function(req, res) {
                             {
                                 if(body.cod == 200)
                                 {
-                                    job# = body.id;
+                                    jobnum = body.id;
                                 }
                             });
                             request({
