@@ -34,7 +34,8 @@ exports.getWeather = function(req, res) {
                 var long = body.coord.lon;
 
                 var pos = {lat: late, lng: long};
-                var marker = new google.maps.Marker({position: pos, map: map});
+                //now add the marker (not working)
+                //var marker = new google.maps.Marker({position: pos, map: map});
 
     			return res.status(200).send(response);
     		} else {
@@ -71,7 +72,8 @@ exports.getWeather2 = function(req, res) {
                 var lng = body.coord.lon;
 
     			var pos = {lat, lng};
-                var marker = new google.maps.Marker({position: pos, map: map});
+                //now add the marker (not working)
+                //var marker = new google.maps.Marker({position: pos, map: map});
 
     			return res.status(200).send(response);
     		} else {
