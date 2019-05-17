@@ -91,7 +91,7 @@ exports.getWeather = function(req, res) {
                             });
                             request({
                                 method: 'GET',
-                                url: host + service + '/' + job#,
+                                url: host + service + '/' + jobNum,
                                 headers: authHeader,
                             }, function( err3, resp3, body3)
                             {
