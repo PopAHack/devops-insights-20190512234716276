@@ -69,11 +69,11 @@ exports.getWeather = function(req, res) {
                             var queryAddCity = 'INSERT INTO cities VALUES(' + body.name + ');';
                             var authHeader = {Autherization: 'Bearer ' + token};
 
-                            request({
-                                method: 'GET',
-                                url host + service,
-                                json:
-                            })
+                            //request({
+                               // method: 'GET',
+                                //url host + service,
+                                //json: true
+                           // })
 
 
                         } else {
