@@ -55,7 +55,7 @@ exports.getWeather = function(req, res) {
                     if(err2) {
                         res.status(400).send('Failed to get the data');
                     }else {
-                        var token = body.token;
+                        var token = body2.token;
                         print(token);
 
                      }
