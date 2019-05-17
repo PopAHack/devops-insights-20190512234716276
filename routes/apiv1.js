@@ -52,7 +52,7 @@ exports.getWeather = function(req, res) {
                 var service = '/auth/tokens';
 
                 request({
-                    method: 'GET',
+                    method: 'POST',
                     url: host + service,
                     json: userinfo }, function( err2, resp2, body2)
                 {
@@ -68,12 +68,38 @@ exports.getWeather = function(req, res) {
                             var queryMakeTable = 'CREATE TABLE cities (Name varchar(255));';
                             var queryAddCity = 'INSERT INTO cities VALUES(' + body.name + ');';
                             var authHeader = {Autherization: 'Bearer ' + token};
+                            var job#;
+                            service = '/sql/jobs'
+                            var sqlCmd = {
+                                commands: queryAddCity,
+                                limit: 1000,
+                                seperator: ";",
+                                stop_on_error: 'yes'
+                            };
 
-                            //request({
-                               // method: 'GET',
-                                //url host + service,
-                                //json: true
-                           // })
+                            request({
+                                method: 'POST',
+                                url: host + service,
+                                headers: authHeader,
+                                json: sqlCmd
+                            }, function( err3, resp3, body3)
+                            {
+                                if(body.cod == 200)
+                                {
+                                    job# = body.id;
+                                }
+                            });
+                            request({
+                                method: 'GET',
+                                url: host + service + '/' + job#,
+                                headers: authHeader,
+                            }, function( err3, resp3, body3)
+                            {
+                                if(body.cod == 200)
+                                {
+                                    //Now here take the cities from the sql request and populate the list
+                                }
+                            });
 
 
                         } else {
