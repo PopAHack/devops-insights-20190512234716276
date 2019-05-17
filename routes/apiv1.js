@@ -45,21 +45,18 @@ exports.getWeather = function(req, res) {
 
                 var userinfo =
                 {
-                    var userid = 'nnv54406',
-                    var password = '63fb7mxj43-5x40g'
+                    userid: 'nnv54406',
+                    password: '63fb7mxj43-5x40g'
                 };
 
                 var service = '/auth/tokens';
-                var r = request.post("dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net" + service, json = userinfo);
+                var r = request.post(host + service, json = userinfo);
                 var token;
                 if(r.status_code = 200)
                     {
                         token = r.json()['token'];
                         print(token);
                     }
-
-
-
 
     			return res.status(200).send(response);
     		} else {
