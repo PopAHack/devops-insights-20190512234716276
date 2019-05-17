@@ -40,6 +40,7 @@ exports.getWeather = function(req, res) {
 
 
                 //sql stuff:
+                //get a token!
                 var api = '/dbapi/v3'
                 var host = 'https://dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net' + api;
 
@@ -50,10 +51,11 @@ exports.getWeather = function(req, res) {
                 };
 
                 var service = '/auth/tokens';
-                var request({
-                method: 'GET',
-                url: host + service,
-                json: userinfo }, function( err2, resp2, body2)
+
+                request({
+                    method: 'GET',
+                    url: host + service,
+                    json: userinfo }, function( err2, resp2, body2)
                 {
                     if(err2) {
                         res.status(400).send('Failed to get the data');
@@ -62,14 +64,12 @@ exports.getWeather = function(req, res) {
                             var token = body2.token;
                             print(token);
 
-
-
-
+                            //add the new city to the database!
+                            //sql query...
 
                         } else {
                             res.status(400).send('Failed to receive data');
                          }
-
                      }
                 });
     			return res.status(200).send(response);
